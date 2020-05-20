@@ -34,9 +34,10 @@ public class cart extends javax.swing.JFrame {
             String que = "select c.pid, p.pname, c.quantity, (p.price*c.quantity) as price from cart c inner join products p on p.pid=c.pid where c.cid ="+cid+";";
             ResultSet rs = stmt.executeQuery(que);
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-            while(rs.next())
+            ResultSet rs1 = stmt.executeQuery(que);
+            while(rs1.next())
             {
-                cb1.addItem(rs.getString("p.pname"));
+                cb1.addItem(rs1.getString("p.pname"));
             }
             
             String que1 = "select sum((p.price*c.quantity)) as total from cart c inner join products p on p.pid=c.pid where c.cid ="+cid+";";
@@ -46,6 +47,7 @@ public class cart extends javax.swing.JFrame {
                     int tot = rs.getInt("total");
             gt.setText(""+tot);
              }
+            rs1.close();
             rs.close();
             stmt.close();
             con.close();
@@ -317,7 +319,10 @@ public class cart extends javax.swing.JFrame {
             }
             int qty = Integer.parseInt(jtf1.getText());
             String que2 = "update cart set quantity = "+qty+" where pid = "+pid+";";
-            stmt.executeQuery(que2);
+            stmt.executeUpdate(que2);
+            String que1 = "select c.pid, p.pname, c.quantity, (p.price*c.quantity) as price from cart c inner join products p on p.pid=c.pid where c.cid ="+cid+";";
+            ResultSet rs1 = stmt.executeQuery(que1);
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs1));
             rs.close();
             stmt.close();
             con.close();
