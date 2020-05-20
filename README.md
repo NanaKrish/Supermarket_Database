@@ -16,3 +16,7 @@ The compiled .jar file is also uploaded in the folder "dist" in the repository, 
 enabled system.
 
 The SQL data dump is also provided to create the database on mysql as per requirement locally and run it accordingly.
+
+The following is the ER diagram for the application as per requirement
+
+<img width="688" alt="FINAL" src="https://user-images.githubusercontent.com/49097320/82454857-ea6ad880-9acf-11ea-871a-29bcd093bb0d.PNG">
