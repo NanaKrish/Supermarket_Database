@@ -47,7 +47,7 @@ public class cust_dash extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+           // JOptionPane.showMessageDialog(null, "Error in connectivity."); 
         }    
     }
 

@@ -43,7 +43,7 @@ public class emp_dash extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+            //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
         }    
         jl1.setText(""+x);
         jl2.setText(en);

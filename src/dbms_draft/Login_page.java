@@ -206,7 +206,7 @@ else if(x.length()==10)
             catch(Exception e)
             {
                 System.out.println(e);
-                JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+                //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
             }
     
 }
@@ -252,7 +252,7 @@ else if(x.length()!=10);
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+           // JOptionPane.showMessageDialog(null, "Error in connectivity."); 
         }
     
     

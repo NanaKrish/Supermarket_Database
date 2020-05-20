@@ -48,7 +48,7 @@ public class cust_prod extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+           // JOptionPane.showMessageDialog(null, "Error in connectivity."); 
         }    
     }
 
@@ -74,7 +74,7 @@ public class cust_prod extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+            //JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }
     }
     
@@ -340,7 +340,7 @@ public class cust_prod extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }    // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -404,7 +404,7 @@ String pname = (String)cb1.getSelectedItem();
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -39,7 +39,7 @@ public class admin_prod extends javax.swing.JFrame {
 catch(Exception e)
 {
     System.out.println(e);
-    JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+   // JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 }    
     }
 
@@ -293,7 +293,7 @@ catch(Exception e)
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }
         showTable();// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -304,8 +304,9 @@ catch(Exception e)
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
             int pid = Integer.parseInt(jtf1.getText());
-            String que1 = "delete from products where where pid = "+pid+";";
-            //String que2 = "delete from emp_product where where pid = '"+pid+"';";
+            String que2 = "delete from emp_product where pid = '"+pid+"';";
+            stmt.executeUpdate(que2);
+            String que1 = "delete from products where pid = "+pid+";";
             stmt.executeUpdate(que1);
             //stmt.executeUpdate(que2);
             stmt.close();
@@ -315,7 +316,7 @@ catch(Exception e)
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+            //JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }
         showTable();// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -336,7 +337,7 @@ catch(Exception e)
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }     // TODO add your handling code here: handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 

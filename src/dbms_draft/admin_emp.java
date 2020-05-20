@@ -371,7 +371,9 @@ showTable();// TODO add your handling code here:
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
             int eid = Integer.parseInt(jtf1.getText());
-            String que = "delete from employee where where eid = "+eid+";";
+            String q1 = "delete from emp_product where eid = "+eid+";";
+            stmt.executeUpdate(q1);
+            String que = "delete from employee  where eid = "+eid+";";
             stmt.executeUpdate(que);
             stmt.close();
             con.close();
@@ -380,7 +382,7 @@ showTable();// TODO add your handling code here:
 catch(Exception e)
 {
     System.out.println(e);
-    JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+    //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 } 
      showTable();// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed

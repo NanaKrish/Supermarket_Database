@@ -26,18 +26,20 @@ public class cart extends javax.swing.JFrame {
         jl1.setText(x);
         jl2.setText(y);
         jl3.setText(z);
+        int cid = Integer.parseInt(x);
         try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
-            String que = "select c.pid, p.pname, c.quantity, (p.price*c.quantity) as price from cart c inner join products p on p.pid=c.pid;";
+            String que = "select c.pid, p.pname, c.quantity, (p.price*c.quantity) as price from cart c inner join products p on p.pid=c.pid where c.cid ="+cid+";";
             ResultSet rs = stmt.executeQuery(que);
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             while(rs.next())
             {
                 cb1.addItem(rs.getString("p.pname"));
             }
-            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-            String que1 = "select sum((p.price*c.quantity)) as total from cart c inner join products p on p.pid=c.pid;";
+            
+            String que1 = "select sum((p.price*c.quantity)) as total from cart c inner join products p on p.pid=c.pid where c.cid ="+cid+";";
             rs = stmt.executeQuery(que1);
             while(rs.next())
             {
@@ -52,7 +54,7 @@ public class cart extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }
     }
 
@@ -280,18 +282,21 @@ public class cart extends javax.swing.JFrame {
             String q5 = "UPDATE PRODUCTS P INNER JOIN CART C ON P.PID=C.CID AND C.CID="+cid+" SET P.QUANTITY = P.QUANTITY - C.QUANTITY;";
             stmt.executeUpdate(q5);
             String q6 = "DELETE FROM CART WHERE CID="+cid+";";
+            stmt.executeUpdate(q6);
             //String que3 = "update product set quantity = quantity - "+qty+" where pid = "+pid+";";
             //stmt.executeUpdate(que3);
             JOptionPane.showMessageDialog(null, "Order Confirmed. Please return to the Login page now.");
             rs.close();
             stmt.close();
             con.close();
+            this.setVisible(false);
+            new Login_page().setVisible(true);
 
         }
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         } 
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -321,7 +326,7 @@ public class cart extends javax.swing.JFrame {
         catch(Exception e)
         {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "Error in connectivity.");
+           // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

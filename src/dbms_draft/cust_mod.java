@@ -337,6 +337,13 @@ try{
             String q1 = "UPDATE CUSTOMER SET MOBILENO='"+usr+"' WHERE CID="+cid+";";
             stmt.executeUpdate(q1);
             JOptionPane.showMessageDialog(null, "Mobile number updated");
+            String q2 = "select mobileno from customer where cid ="+cid+";";
+            ResultSet rs = stmt.executeQuery(q2);
+            while(rs.next())
+            {
+                jl3.setText(rs.getString("mobileno"));
+            }
+           rs.close();
             stmt.close();
             con.close();
 

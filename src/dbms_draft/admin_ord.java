@@ -144,7 +144,7 @@ try{
 catch(Exception e)
 {
     System.out.println(e);
-    JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+    //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 }            // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
