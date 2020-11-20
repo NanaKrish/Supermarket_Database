@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbms_draft;
+package supermarket;
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
@@ -209,7 +209,7 @@ public class cust_prod extends javax.swing.JFrame {
         jLabel8.setText("Available Quantity");
         jLabel8.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dbms_draft/shopping-cart--v2_1.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbms_draft;
+package supermarket;
 
 import javax.swing.JOptionPane;
 
@@ -94,7 +94,7 @@ public class admin_dash extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 210, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dbms_draft/shopping-cart--v2_1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, 70));
 
         pack();

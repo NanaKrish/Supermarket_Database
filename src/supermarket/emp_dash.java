@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbms_draft;
+package supermarket;
 import java.sql.*;
-import javax.swing.JOptionPane;
 
 
 /**
@@ -68,7 +67,7 @@ public class emp_dash extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jl2 = new javax.swing.JLabel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dbms_draft/shopping-cart--v2_1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +83,7 @@ public class emp_dash extends javax.swing.JFrame {
         jl1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.lightGray, java.awt.Color.darkGray, java.awt.Color.lightGray));
         jl1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dbms_draft/shopping-cart--v2_1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
         jButton1.setText("Change Password");

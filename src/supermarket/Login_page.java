@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbms_draft;
+package supermarket;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
@@ -79,7 +79,7 @@ boolean allnumeric(String s)
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 270, 60));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dbms_draft/shopping-cart--v2_1.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

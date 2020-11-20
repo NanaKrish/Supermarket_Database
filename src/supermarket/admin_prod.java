@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dbms_draft;
+package supermarket;
 import java.sql.*;
-import javax.swing.*;
+
 import net.proteanit.sql.DbUtils;
 
 /**
