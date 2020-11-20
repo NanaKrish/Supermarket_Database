@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Customer;
+import supermarket.login.LoginPage;
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
@@ -12,15 +13,15 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Narayanan Krishna
  */
-public class cart extends javax.swing.JFrame {
+public class Cart extends javax.swing.JFrame {
 
     /**
      * Creates new form cart
      */
-    public cart() {
+    public Cart() {
         initComponents();
     }
-    public cart(String x, String y, String z)
+    public Cart(String x, String y, String z)
     {
         initComponents();
         jl1.setText(x);
@@ -78,13 +79,13 @@ public class cart extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cb1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ConfirmOrder = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         gt = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtf1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        UpdateCart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,12 +137,12 @@ public class cart extends javax.swing.JFrame {
         jLabel3.setText("Product List");
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        jButton1.setText("Confirm Order");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ConfirmOrder.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        ConfirmOrder.setText("Confirm Order");
+        ConfirmOrder.setBorder(new javax.swing.border.MatteBorder(null));
+        ConfirmOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ConfirmOrderActionPerformed(evt);
             }
         });
 
@@ -166,12 +167,12 @@ public class cart extends javax.swing.JFrame {
         jLabel6.setText("*To delete an item from the cart, set quantity to 0");
         jLabel6.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
-        jButton2.setText("Update cart");
-        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        UpdateCart.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
+        UpdateCart.setText("Update cart");
+        UpdateCart.setBorder(new javax.swing.border.MatteBorder(null));
+        UpdateCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                UpdateCartActionPerformed(evt);
             }
         });
 
@@ -183,7 +184,7 @@ public class cart extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -203,12 +204,11 @@ public class cart extends javax.swing.JFrame {
                                 .addComponent(jl1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jtf1)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cb1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(UpdateCart, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                                    .addComponent(jtf1)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cb1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(99, 99, 99))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -228,7 +228,7 @@ public class cart extends javax.swing.JFrame {
                             .addComponent(gt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                         .addGap(80, 80, 80)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -246,7 +246,7 @@ public class cart extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jtf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UpdateCart, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -257,17 +257,17 @@ public class cart extends javax.swing.JFrame {
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
         //        String pid = (String)cb1.getSelectedItem();
         /*String pname = (String)cb1.getSelectedItem();
-        // TODO add your handling code here:)*/
+         )*/
     }//GEN-LAST:event_cb1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ConfirmOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmOrderActionPerformed
 
 
         try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
-            //String q1 = "select * from cart;";
+            //String q1 = "select * from Cart;";
             //ResultSet rs = stmt.executeQuery(q1);
             int cid = Integer.parseInt(jl1.getText());
             String q2 = "INSERT INTO ORDERS(CID, ORDERDATE, ORDERSTATUS) VALUES("+cid+", CURDATE(), 'C');";
@@ -292,7 +292,7 @@ public class cart extends javax.swing.JFrame {
             stmt.close();
             con.close();
             this.setVisible(false);
-            new Login_page().setVisible(true);
+            new LoginPage().setVisible(true);
 
         }
         catch(Exception e)
@@ -301,9 +301,9 @@ public class cart extends javax.swing.JFrame {
            // JOptionPane.showMessageDialog(null, "Error in connectivity.");
         } 
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ConfirmOrderActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void UpdateCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateCartActionPerformed
         String pname = (String)cb1.getSelectedItem();
         int cid = Integer.parseInt(jl1.getText());
         try{
@@ -332,8 +332,8 @@ public class cart extends javax.swing.JFrame {
         {
             System.out.println(e);
            // JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        }         
+    }//GEN-LAST:event_UpdateCartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,29 +352,30 @@ public class cart extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cart().setVisible(true);
+                new Cart().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConfirmOrder;
+    private javax.swing.JButton UpdateCart;
     private javax.swing.JComboBox<String> cb1;
     private javax.swing.JLabel gt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

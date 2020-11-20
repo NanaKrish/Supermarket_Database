@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package supermarket;
+import supermarket.login.LoginPage;
 import java.sql.*;
 import javax.swing.*;
 
@@ -11,12 +12,12 @@ import javax.swing.*;
  *
  * @author Narayanan Krishna
  */
-public class Cust_reg extends javax.swing.JFrame {
+public class CustomerRegisteration extends javax.swing.JFrame {
 
     /**
      * Creates new form Cust_reg
      */
-    public Cust_reg() {
+    public CustomerRegisteration() {
         initComponents();
     }
 
@@ -39,7 +40,7 @@ public class Cust_reg extends javax.swing.JFrame {
         jtf1 = new javax.swing.JTextField();
         jtf3 = new javax.swing.JTextField();
         jtf4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        Register = new javax.swing.JButton();
         jpf1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,20 +89,20 @@ public class Cust_reg extends javax.swing.JFrame {
         getContentPane().add(jtf3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 292, 211, 32));
         getContentPane().add(jtf4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 211, 33));
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        jButton2.setText("Register!");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Register.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        Register.setText("Register!");
+        Register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                RegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 270, 40));
+        getContentPane().add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 270, 40));
         getContentPane().add(jpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 210, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
 String usrname = jtf1.getText();
 String pwd = new String(jpf1.getPassword());
 String phno = jtf3.getText();
@@ -128,12 +129,12 @@ String mailid = jtf4.getText();
      System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
  }
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+ 
+    }//GEN-LAST:event_RegisterActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.setVisible(false);
-new Login_page().setVisible(true);// TODO add your handling code here:
+new LoginPage().setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -153,27 +154,28 @@ new Login_page().setVisible(true);// TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cust_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerRegisteration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cust_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerRegisteration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cust_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerRegisteration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cust_reg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerRegisteration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cust_reg().setVisible(true);
+                new CustomerRegisteration().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Register;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

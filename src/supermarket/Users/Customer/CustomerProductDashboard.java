@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Customer;
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
@@ -12,16 +12,16 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Narayanan Krishna
  */
-public class cust_prod extends javax.swing.JFrame {
+public class CustomerProductDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form cust_prod
      */
-    public cust_prod() {
+    public CustomerProductDashboard() {
         initComponents();
     }
     
-    public cust_prod(String x)
+    public CustomerProductDashboard(String x)
     {
         initComponents();
         int cid = -1;
@@ -98,15 +98,15 @@ public class cust_prod extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        RetrieveData = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         cb1 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jtf1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        AddCart = new javax.swing.JButton();
         jl7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        GoToCart = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
@@ -158,12 +158,12 @@ public class cust_prod extends javax.swing.JFrame {
         jLabel2.setText("Choose your products here");
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 102)));
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
-        jButton1.setText("Retrieve data");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RetrieveData.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
+        RetrieveData.setText("Retrieve data");
+        RetrieveData.setBorder(new javax.swing.border.MatteBorder(null));
+        RetrieveData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RetrieveDataActionPerformed(evt);
             }
         });
 
@@ -192,11 +192,11 @@ public class cust_prod extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
-        jButton2.setText("Add to cart");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AddCart.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
+        AddCart.setText("Add to cart");
+        AddCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AddCartActionPerformed(evt);
             }
         });
 
@@ -209,10 +209,10 @@ public class cust_prod extends javax.swing.JFrame {
         jLabel8.setText("Available Quantity");
         jLabel8.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
+        GoToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                GoToCartActionPerformed(evt);
             }
         });
 
@@ -233,7 +233,7 @@ public class cust_prod extends javax.swing.JFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtf1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AddCart, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(138, 138, 138)
@@ -244,7 +244,7 @@ public class cust_prod extends javax.swing.JFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RetrieveData, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(149, 149, 149))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -258,7 +258,7 @@ public class cust_prod extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GoToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -284,7 +284,7 @@ public class cust_prod extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtf1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddCart, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(124, 124, 124)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -303,11 +303,11 @@ public class cust_prod extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RetrieveData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GoToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -319,7 +319,7 @@ public class cust_prod extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RetrieveDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetrieveDataActionPerformed
 //        int eid = Integer.parseInt(jl2.getText());
         try{
             Class.forName("java.sql.Driver");
@@ -341,8 +341,8 @@ public class cust_prod extends javax.swing.JFrame {
         {
             System.out.println(e);
            // JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }    // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        }     
+    }//GEN-LAST:event_RetrieveDataActionPerformed
 
     private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
 //        String pid = (String)cb1.getSelectedItem();
@@ -368,14 +368,14 @@ String pname = (String)cb1.getSelectedItem();
         {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }// TODO add your handling code here:)*/
+        } 
     }//GEN-LAST:event_cb1ActionPerformed
 
     private void jtf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf1ActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_jtf1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AddCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCartActionPerformed
         int cid = Integer.parseInt(jl1.getText());        
         String pname = (String)cb1.getSelectedItem();
         try{
@@ -405,16 +405,16 @@ String pname = (String)cb1.getSelectedItem();
         {
             System.out.println(e);
            // JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        }         
+    }//GEN-LAST:event_AddCartActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void GoToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoToCartActionPerformed
 String x = jl1.getText(); 
 String y = jl2.getText();     
 String z = jl3.getText();
 this.setVisible(false);
-new cart(x, y, z).setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+new Cart(x, y, z).setVisible(true); 
+    }//GEN-LAST:event_GoToCartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,29 +433,30 @@ new cart(x, y, z).setVisible(true);// TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cust_prod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerProductDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cust_prod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerProductDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cust_prod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerProductDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cust_prod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerProductDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cust_prod().setVisible(true);
+                new CustomerProductDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddCart;
+    private javax.swing.JButton GoToCart;
+    private javax.swing.JButton RetrieveData;
     private javax.swing.JComboBox<String> cb1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

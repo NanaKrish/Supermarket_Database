@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.login;
 import javax.swing.JOptionPane;
 import java.sql.*;
+import supermarket.CustomerRegisteration;
+import supermarket.Users.Admin.AdminDashboard;
+import supermarket.Users.Customer.CustomerDashboard;
+import supermarket.Users.Employee.EmployeeDashboard;
 
 /**
  *
  * @author Narayanan Krishna
  */
-public class Login_page extends javax.swing.JFrame {
+public class LoginPage extends javax.swing.JFrame {
 
     /**
      * Creates new form Login_page
      */
-    public Login_page() {
+    public LoginPage() {
         initComponents();
     }
 boolean allnumeric(String s)
@@ -52,10 +56,10 @@ boolean allnumeric(String s)
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jtf1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        usrid = new javax.swing.JTextField();
+        pwdf = new javax.swing.JPasswordField();
+        Customer = new javax.swing.JButton();
+        login = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -99,30 +103,30 @@ boolean allnumeric(String s)
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 510, 30));
 
-        jtf1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        jtf1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jtf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 260, 50));
+        usrid.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        usrid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(usrid, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 260, 50));
 
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 260, 50));
+        pwdf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(pwdf, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 260, 50));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
-        jButton2.setText("Oops, I ain't got an account! ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Customer.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
+        Customer.setText("Oops, I ain't got an account! ");
+        Customer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                CustomerActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 320, 50));
+        jPanel1.add(Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 320, 50));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
-        jButton3.setText("Login already!");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        login.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
+        login.setText("Login already!");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 230, 50));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 230, 50));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -148,12 +152,12 @@ boolean allnumeric(String s)
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       JOptionPane.showMessageDialog(null, "Dear User, please login first!");  // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null, "Dear User, please login first!");  
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      String x = jtf1.getText();
-      String y = new String(jPasswordField1.getPassword());
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+      String x = usrid.getText();
+      String y = new String(pwdf.getPassword());
       System.out.println(x.length());
       System.out.println(allnumeric(x));
 if(   "admin".equals(x))
@@ -163,7 +167,7 @@ if(   "admin".equals(x))
     {
         JOptionPane.showMessageDialog(null ,x +", you've logged in successfully.");
         this.setVisible(false);
-        new admin_dash().setVisible(true);
+        new AdminDashboard().setVisible(true);
     }
     else
     {
@@ -186,7 +190,7 @@ else if(x.length()==10)
                             {
                                 JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
                                  this.setVisible(false);
-                                 new cust_dash(x).setVisible(true);
+                                 new CustomerDashboard(x).setVisible(true);
                             }
                             else
                             {
@@ -232,7 +236,7 @@ else if(x.length()!=10);
                                 JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
                                 int i = Integer.parseInt(x);
                                  this.setVisible(false);
-                                 new emp_dash(i).setVisible(true);
+                                 new EmployeeDashboard(i).setVisible(true);
                             }
                             else
                             {
@@ -257,13 +261,13 @@ else if(x.length()!=10);
     
     
 }
- // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
+
+    private void CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerActionPerformed
 this.setVisible(false);
-new Cust_reg().setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+new CustomerRegisteration().setVisible(true);
+    }//GEN-LAST:event_CustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,28 +286,28 @@ new Cust_reg().setVisible(true);// TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login_page.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_page().setVisible(true);
+                new LoginPage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Customer;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -312,7 +316,8 @@ new Cust_reg().setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jtf1;
+    private javax.swing.JButton login;
+    private javax.swing.JPasswordField pwdf;
+    private javax.swing.JTextField usrid;
     // End of variables declaration//GEN-END:variables
 }

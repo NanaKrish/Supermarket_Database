@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Employee;
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
@@ -12,16 +12,16 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Narayanan Krishna
  */
-public class Prod_det extends javax.swing.JFrame {
+public class ProductDetailsDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form Prod_det
      */
-    public Prod_det() {
+    public ProductDetailsDashboard() {
         initComponents();
     }
     
-    public Prod_det(int x, String y){
+    public ProductDetailsDashboard(int x, String y){
         initComponents();
         jl2.setText(""+x);
         jl3.setText(y);
@@ -64,10 +64,10 @@ catch(Exception e)
         jTable1 = new javax.swing.JTable();
         cb1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        RetrieveData = new javax.swing.JButton();
+        ReturnDashboard = new javax.swing.JButton();
         jtf1 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        UpdateQuantity = new javax.swing.JButton();
         jl3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -110,32 +110,32 @@ catch(Exception e)
         jLabel1.setText("Choose product based on ID");
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
-        jButton1.setText("Retrieve data");
-        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RetrieveData.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 17)); // NOI18N
+        RetrieveData.setText("Retrieve data");
+        RetrieveData.setBorder(new javax.swing.border.MatteBorder(null));
+        RetrieveData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RetrieveDataActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 15)); // NOI18N
-        jButton2.setText("Return to dashboard");
-        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ReturnDashboard.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 15)); // NOI18N
+        ReturnDashboard.setText("Return to dashboard");
+        ReturnDashboard.setBorder(new javax.swing.border.MatteBorder(null));
+        ReturnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ReturnDashboardActionPerformed(evt);
             }
         });
 
         jtf1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
         jtf1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jButton5.setText("Update Quantity");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        UpdateQuantity.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        UpdateQuantity.setText("Update Quantity");
+        UpdateQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                UpdateQuantityActionPerformed(evt);
             }
         });
 
@@ -162,12 +162,12 @@ catch(Exception e)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ReturnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(RetrieveData, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -176,7 +176,7 @@ catch(Exception e)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(UpdateQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -204,7 +204,7 @@ catch(Exception e)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RetrieveData, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
@@ -218,11 +218,11 @@ catch(Exception e)
                                 .addGap(1, 1, 1)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UpdateQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ReturnDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -248,10 +248,10 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}// TODO add your handling code here:)
+} 
     }//GEN-LAST:event_cb1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RetrieveDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetrieveDataActionPerformed
 int eid = Integer.parseInt(jl2.getText());
 try{
             Class.forName("java.sql.Driver");
@@ -272,16 +272,16 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}    // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+}     
+    }//GEN-LAST:event_RetrieveDataActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ReturnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnDashboardActionPerformed
 int x = Integer.parseInt(jl2.getText());
 this.setVisible(false);
-new emp_dash(x).setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+new EmployeeDashboard(x).setVisible(true); 
+    }//GEN-LAST:event_ReturnDashboardActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void UpdateQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateQuantityActionPerformed
 int pid = Integer.parseInt((String)cb1.getSelectedItem());
 
 try{
@@ -300,8 +300,8 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+}         
+    }//GEN-LAST:event_UpdateQuantityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,29 +320,30 @@ catch(Exception e)
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Prod_det.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductDetailsDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Prod_det.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductDetailsDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Prod_det.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductDetailsDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Prod_det.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProductDetailsDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Prod_det().setVisible(true);
+                new ProductDetailsDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RetrieveData;
+    private javax.swing.JButton ReturnDashboard;
+    private javax.swing.JButton UpdateQuantity;
     private javax.swing.JComboBox<String> cb1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

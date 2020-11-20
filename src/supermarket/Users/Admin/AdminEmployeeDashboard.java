@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Admin;
 
 /**
  *
  * @author Narayanan Krishna
  */
+import supermarket.Users.Admin.AdminDashboard;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
-public class admin_emp extends javax.swing.JFrame {
+public class AdminEmployeeDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form admin_emp
      */
-    public admin_emp() {
+    public AdminEmployeeDashboard() {
         initComponents();
     }
 
@@ -64,14 +65,14 @@ catch(Exception e)
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jtf1 = new javax.swing.JTextField();
-        jtf2 = new javax.swing.JTextField();
-        jtf3 = new javax.swing.JTextField();
-        jtf5 = new javax.swing.JTextField();
-        jtf4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        EmployeeName = new javax.swing.JTextField();
+        Password = new javax.swing.JTextField();
+        MailID = new javax.swing.JTextField();
+        PhNo = new javax.swing.JTextField();
+        AddRecord = new javax.swing.JButton();
+        DeleteRecord = new javax.swing.JButton();
+        UpdateRecord = new javax.swing.JButton();
+        ViewRecords = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -135,41 +136,41 @@ catch(Exception e)
         jLabel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.lightGray, java.awt.Color.darkGray, java.awt.Color.lightGray));
         jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jtf2.addActionListener(new java.awt.event.ActionListener() {
+        EmployeeName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtf2ActionPerformed(evt);
+                EmployeeNameActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton1.setText("Add new record");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AddRecord.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        AddRecord.setText("Add new record");
+        AddRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AddRecordActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton2.setText("Delete record*");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        DeleteRecord.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        DeleteRecord.setText("Delete record*");
+        DeleteRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                DeleteRecordActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton3.setText("Update record");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        UpdateRecord.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        UpdateRecord.setText("Update record");
+        UpdateRecord.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                UpdateRecordActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton4.setText("View");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ViewRecords.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        ViewRecords.setText("View");
+        ViewRecords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ViewRecordsActionPerformed(evt);
             }
         });
 
@@ -208,13 +209,13 @@ catch(Exception e)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtf2)
-                            .addComponent(jtf3, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(jtf5)
-                            .addComponent(jtf4)))
+                            .addComponent(EmployeeName)
+                            .addComponent(Password, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(MailID)
+                            .addComponent(PhNo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AddRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,16 +226,16 @@ catch(Exception e)
                         .addComponent(jtf1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(147, 147, 147)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UpdateRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(207, 207, 207)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ViewRecords, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeleteRecord, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)))
@@ -254,22 +255,22 @@ catch(Exception e)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtf2)
+                            .addComponent(EmployeeName)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtf3)
+                            .addComponent(Password)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf4))
+                            .addComponent(PhNo))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MailID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(AddRecord)
                         .addGap(16, 16, 16)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -277,13 +278,13 @@ catch(Exception e)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(UpdateRecord)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(ViewRecords)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(DeleteRecord)
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -293,20 +294,20 @@ catch(Exception e)
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf2ActionPerformed
+    private void EmployeeNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeNameActionPerformed
+         
+    }//GEN-LAST:event_EmployeeNameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AddRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddRecordActionPerformed
 try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
             //String eid = jtf1.getText();
-            String ename = jtf2.getText();
-            String epwd = jtf3.getText();
-            String phno = jtf4.getText();
-            String mailid = jtf5.getText();
+            String ename = EmployeeName.getText();
+            String epwd = Password.getText();
+            String phno = PhNo.getText();
+            String mailid = MailID.getText();
             String que = "insert into employee values(null, '"+ename+"', '"+epwd+"', '"+phno+"','"+mailid+"');"; 
             stmt.executeUpdate(que);
             stmt.close();
@@ -318,10 +319,10 @@ catch(Exception e)
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 }   
-showTable();// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+showTable(); 
+    }//GEN-LAST:event_AddRecordActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ViewRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewRecordsActionPerformed
   try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
@@ -338,19 +339,19 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}     // TODO add your handling code here: handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+}      
+    }//GEN-LAST:event_ViewRecordsActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void UpdateRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateRecordActionPerformed
 try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
             Statement stmt = con.createStatement();
             int eid = Integer.parseInt(jtf1.getText());
-            String ename = jtf2.getText();
-            String epwd = jtf3.getText();
-            String phno = jtf4.getText();
-            String mailid = jtf5.getText();
+            String ename = EmployeeName.getText();
+            String epwd = Password.getText();
+            String phno = PhNo.getText();
+            String mailid = MailID.getText();
             String que = "update employee set ename = '"+ename+"', password = '"+epwd+"', mobileno = '"+phno+"', mailid = '"+mailid+"' where eid = "+eid+";";
             stmt.executeUpdate(que);
             stmt.close();
@@ -362,10 +363,10 @@ catch(Exception e)
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 }     
-showTable();// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+showTable(); 
+    }//GEN-LAST:event_UpdateRecordActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void DeleteRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteRecordActionPerformed
      try{
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
@@ -384,12 +385,12 @@ catch(Exception e)
     System.out.println(e);
     //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
 } 
-     showTable();// TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+     showTable(); 
+    }//GEN-LAST:event_DeleteRecordActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 this.setVisible(false);
-new admin_dash().setVisible(true);// TODO add your handling code here:
+new AdminDashboard().setVisible(true); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -409,29 +410,34 @@ new admin_dash().setVisible(true);// TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(admin_emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(admin_emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(admin_emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(admin_emp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new admin_emp().setVisible(true);
+                new AdminEmployeeDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton AddRecord;
+    private javax.swing.JButton DeleteRecord;
+    private javax.swing.JTextField EmployeeName;
+    private javax.swing.JTextField MailID;
+    private javax.swing.JTextField Password;
+    private javax.swing.JTextField PhNo;
+    private javax.swing.JButton UpdateRecord;
+    private javax.swing.JButton ViewRecords;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -445,9 +451,5 @@ new admin_dash().setVisible(true);// TODO add your handling code here:
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jtf1;
-    private javax.swing.JTextField jtf2;
-    private javax.swing.JTextField jtf3;
-    private javax.swing.JTextField jtf4;
-    private javax.swing.JTextField jtf5;
     // End of variables declaration//GEN-END:variables
 }

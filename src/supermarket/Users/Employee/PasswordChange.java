@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Employee;
 
+import supermarket.Users.Employee.EmployeeDashboard;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,16 +16,16 @@ import javax.swing.JOptionPane;
  *
  * @author Narayanan Krishna
  */
-public class ch_pwd extends javax.swing.JFrame {
+public class PasswordChange extends javax.swing.JFrame {
 
     /**
      * Creates new form ch_pwd
      */
-    public ch_pwd() {
+    public PasswordChange() {
         initComponents();
     }
     
-    public ch_pwd(int x, String y)
+    public PasswordChange(int x, String y)
     {
         jl4.setText(""+x);
         jl2.setText(y);
@@ -45,13 +46,13 @@ public class ch_pwd extends javax.swing.JFrame {
         jl4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jpf1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        VerifyPassword = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jpf2 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jpf3 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        SetPassword = new javax.swing.JButton();
+        ReturnDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,11 +87,11 @@ public class ch_pwd extends javax.swing.JFrame {
 
         jpf1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton1.setText("Verify password");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        VerifyPassword.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        VerifyPassword.setText("Verify password");
+        VerifyPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                VerifyPasswordActionPerformed(evt);
             }
         });
 
@@ -110,19 +111,19 @@ public class ch_pwd extends javax.swing.JFrame {
 
         jpf3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton2.setText("Set password");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        SetPassword.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        SetPassword.setText("Set password");
+        SetPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SetPasswordActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
-        jButton3.setText("Go back to the dashboard");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ReturnDashboard.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 13)); // NOI18N
+        ReturnDashboard.setText("Go back to the dashboard");
+        ReturnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ReturnDashboardActionPerformed(evt);
             }
         });
 
@@ -143,7 +144,7 @@ public class ch_pwd extends javax.swing.JFrame {
                         .addComponent(jl4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(358, 358, 358)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(VerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(185, 185, 185)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,11 +162,11 @@ public class ch_pwd extends javax.swing.JFrame {
                                     .addComponent(jpf2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(356, 356, 356)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(230, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3))
+                .addComponent(ReturnDashboard))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +183,7 @@ public class ch_pwd extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(jpf1))
                 .addGap(41, 41, 41)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(VerifyPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -192,15 +193,15 @@ public class ch_pwd extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpf3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ReturnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void VerifyPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerifyPasswordActionPerformed
         int eid = Integer.parseInt(jl4.getText());
         try{
             Class.forName("java.sql.Driver");
@@ -222,10 +223,10 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}            // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+}             
+    }//GEN-LAST:event_VerifyPasswordActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SetPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetPasswordActionPerformed
       int eid = Integer.parseInt(jl4.getText());
         try{
             Class.forName("java.sql.Driver");
@@ -247,14 +248,14 @@ catch(Exception e)
 {
     System.out.println(e);
     JOptionPane.showMessageDialog(null, "Error in connectivity."); 
-}        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+}         
+    }//GEN-LAST:event_SetPasswordActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int x= Integer.parseInt(jl4.getText());// TODO add your handling code here:
+    private void ReturnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnDashboardActionPerformed
+        int x= Integer.parseInt(jl4.getText()); 
         this.setVisible(false);
-        new emp_dash(x).setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        new EmployeeDashboard(x).setVisible(true);
+    }//GEN-LAST:event_ReturnDashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,28 +274,29 @@ catch(Exception e)
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ch_pwd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ch_pwd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ch_pwd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ch_pwd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordChange.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ch_pwd().setVisible(true);
+                new PasswordChange().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton ReturnDashboard;
+    private javax.swing.JButton SetPassword;
+    private javax.swing.JButton VerifyPassword;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

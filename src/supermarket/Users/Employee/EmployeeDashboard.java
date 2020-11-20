@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Employee;
+import supermarket.login.LoginPage;
 import java.sql.*;
 
 
@@ -11,16 +12,16 @@ import java.sql.*;
  *
  * @author Narayanan Krishna
  */
-public class emp_dash extends javax.swing.JFrame {
+public class EmployeeDashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form emp_dash
      */
-    public emp_dash() {
+    public EmployeeDashboard() {
         initComponents();
     }
 
-    public emp_dash(int x)
+    public EmployeeDashboard(int x)
     {
         initComponents();
         String en = "";
@@ -60,10 +61,10 @@ public class emp_dash extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jl1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ChangePassword = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
+        ProductDetails = new javax.swing.JButton();
+        UpdateProductDetails = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jl2 = new javax.swing.JLabel();
 
@@ -85,36 +86,36 @@ public class emp_dash extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/supermarket/shopping-cart--v2_1.png"))); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
-        jButton1.setText("Change Password");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ChangePassword.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
+        ChangePassword.setText("Change Password");
+        ChangePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ChangePasswordActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
-        jButton3.setText("Logout");
-        jButton3.setBorder(new javax.swing.border.MatteBorder(null));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Logout.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
+        Logout.setText("Logout");
+        Logout.setBorder(new javax.swing.border.MatteBorder(null));
+        Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                LogoutActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
-        jButton2.setText("View Product Details");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ProductDetails.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
+        ProductDetails.setText("View Product Details");
+        ProductDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ProductDetailsActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
-        jButton4.setText("Update Product Details");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        UpdateProductDetails.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
+        UpdateProductDetails.setText("Update Product Details");
+        UpdateProductDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                UpdateProductDetailsActionPerformed(evt);
             }
         });
 
@@ -140,15 +141,15 @@ public class emp_dash extends javax.swing.JFrame {
                 .addComponent(jl1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(121, 121, 121)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ProductDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(136, 136, 136))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(311, 311, 311)
-                        .addComponent(jButton4))
+                        .addComponent(UpdateProductDetails))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(379, 379, 379)
                         .addComponent(jLabel2))
@@ -159,7 +160,7 @@ public class emp_dash extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Logout, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
@@ -174,45 +175,45 @@ public class emp_dash extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UpdateProductDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
         int x = Integer.parseInt(jl1.getText());
         String y = jl2.getText();
         this.setVisible(false);
-        new ch_pwd(x, y).setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        new PasswordChange(x, y).setVisible(true);         
+    }//GEN-LAST:event_ChangePasswordActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
     this.setVisible(false);
-    new Login_page().setVisible(true);
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    new LoginPage().setVisible(true);
+ 
+    }//GEN-LAST:event_LogoutActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ProductDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductDetailsActionPerformed
 int x = Integer.parseInt(jl1.getText());
         String y = jl2.getText();
         this.setVisible(false);
-        new Prod_det(x, y).setVisible(true);           // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        new ProductDetailsDashboard(x, y).setVisible(true);            
+    }//GEN-LAST:event_ProductDetailsActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void UpdateProductDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProductDetailsActionPerformed
     int x = Integer.parseInt(jl1.getText());
         String y = jl2.getText();
         this.setVisible(false);
-        new Prod_det(x, y).setVisible(true); // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        new ProductDetailsDashboard(x, y).setVisible(true);  
+    }//GEN-LAST:event_UpdateProductDetailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,29 +232,30 @@ int x = Integer.parseInt(jl1.getText());
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(emp_dash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(emp_dash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(emp_dash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(emp_dash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new emp_dash().setVisible(true);
+                new EmployeeDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton ChangePassword;
+    private javax.swing.JButton Logout;
+    private javax.swing.JButton ProductDetails;
+    private javax.swing.JButton UpdateProductDetails;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

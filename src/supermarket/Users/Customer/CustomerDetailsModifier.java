@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermarket;
+package supermarket.Users.Customer;
 import java.sql.*;
 import javax.swing.*;
 
@@ -11,16 +11,16 @@ import javax.swing.*;
  *
  * @author Narayanan Krishna
  */
-public class cust_mod extends javax.swing.JFrame {
+public class CustomerDetailsModifier extends javax.swing.JFrame {
 
     /**
      * Creates new form cust_mod
      */
-    public cust_mod() {
+    public CustomerDetailsModifier() {
         initComponents();
     }
 
-    public cust_mod(String x, String y, String z)
+    public CustomerDetailsModifier(String x, String y, String z)
     {
         initComponents();
         jl1.setText(x);
@@ -51,12 +51,12 @@ public class cust_mod extends javax.swing.JFrame {
         jtf1 = new javax.swing.JTextField();
         jtf2 = new javax.swing.JTextField();
         jtf3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        UpdateName = new javax.swing.JButton();
+        UpdatePassword = new javax.swing.JButton();
+        UpdateNumber = new javax.swing.JButton();
+        UpdateEmail = new javax.swing.JButton();
         jpf1 = new javax.swing.JPasswordField();
-        jButton5 = new javax.swing.JButton();
+        ReturnDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,49 +127,49 @@ public class cust_mod extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
-        jButton1.setText("Update name");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        UpdateName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
+        UpdateName.setText("Update name");
+        UpdateName.setToolTipText("");
+        UpdateName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                UpdateNameActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
-        jButton2.setText("Update password");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        UpdatePassword.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
+        UpdatePassword.setText("Update password");
+        UpdatePassword.setToolTipText("");
+        UpdatePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                UpdatePasswordActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
-        jButton3.setText("Update number");
-        jButton3.setToolTipText("");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        UpdateNumber.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
+        UpdateNumber.setText("Update number");
+        UpdateNumber.setToolTipText("");
+        UpdateNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                UpdateNumberActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
-        jButton4.setText("Update email");
-        jButton4.setToolTipText("");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        UpdateEmail.setFont(new java.awt.Font("Segoe UI Semibold", 0, 17)); // NOI18N
+        UpdateEmail.setText("Update email");
+        UpdateEmail.setToolTipText("");
+        UpdateEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                UpdateEmailActionPerformed(evt);
             }
         });
 
         jpf1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton5.setFont(new java.awt.Font("Yu Gothic UI", 0, 15)); // NOI18N
-        jButton5.setText("Return to the dashboard");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ReturnDashboard.setFont(new java.awt.Font("Yu Gothic UI", 0, 15)); // NOI18N
+        ReturnDashboard.setText("Return to the dashboard");
+        ReturnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ReturnDashboardActionPerformed(evt);
             }
         });
 
@@ -211,18 +211,18 @@ public class cust_mod extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UpdateName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(155, 155, 155)
-                        .addComponent(jButton2))
+                        .addComponent(UpdatePassword))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(108, 108, 108)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UpdateNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(164, 164, 164)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(UpdateEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ReturnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,8 +250,8 @@ public class cust_mod extends javax.swing.JFrame {
                     .addComponent(jtf1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(UpdateName)
+                    .addComponent(UpdatePassword))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,28 +262,28 @@ public class cust_mod extends javax.swing.JFrame {
                     .addComponent(jtf3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(UpdateNumber)
+                    .addComponent(UpdateEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ReturnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf1ActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_jtf1ActionPerformed
 
     private void jtf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf2ActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_jtf2ActionPerformed
 
     private void jtf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf3ActionPerformed
-        // TODO add your handling code here:
+         
     }//GEN-LAST:event_jtf3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void UpdatePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdatePasswordActionPerformed
 int cid = Integer.parseInt(jl1.getText());
 String usr = new String(jpf1.getPassword());
 try{
@@ -301,10 +301,10 @@ try{
         {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        }         
+    }//GEN-LAST:event_UpdatePasswordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void UpdateNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateNameActionPerformed
 int cid = Integer.parseInt(jl1.getText());
 String usr = jtf1.getText();
 try{
@@ -324,10 +324,10 @@ try{
             JOptionPane.showMessageDialog(null, "Error in connectivity.");
         }
 
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+ 
+    }//GEN-LAST:event_UpdateNameActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void UpdateNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateNumberActionPerformed
 int cid = Integer.parseInt(jl1.getText());
 String usr = jtf2.getText();
 try{
@@ -352,10 +352,10 @@ try{
         {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        }         
+    }//GEN-LAST:event_UpdateNumberActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void UpdateEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateEmailActionPerformed
 int cid = Integer.parseInt(jl1.getText());
 String usr = jtf3.getText();
 try{
@@ -373,14 +373,14 @@ try{
         {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Error in connectivity.");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        }         
+    }//GEN-LAST:event_UpdateEmailActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ReturnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnDashboardActionPerformed
 String x = jl3.getText();
 this.setVisible(false);
-new cust_dash(x).setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+new CustomerDashboard(x).setVisible(true); 
+    }//GEN-LAST:event_ReturnDashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,30 +399,31 @@ new cust_dash(x).setVisible(true);// TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cust_mod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDetailsModifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cust_mod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDetailsModifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cust_mod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDetailsModifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cust_mod.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerDetailsModifier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cust_mod().setVisible(true);
+                new CustomerDetailsModifier().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton ReturnDashboard;
+    private javax.swing.JButton UpdateEmail;
+    private javax.swing.JButton UpdateName;
+    private javax.swing.JButton UpdateNumber;
+    private javax.swing.JButton UpdatePassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
