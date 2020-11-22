@@ -1,9 +1,12 @@
 package supermarket.dao;
 
+import supermarket.entity.Customer;
 import supermarket.entity.Employee;
 import supermarket.entity.Product;
 import supermarket.helpers.JDBCHelper;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     @Override
     public boolean updateEmployee(Employee employee) throws SQLException {
         return false;
+    }
+
+    public ResultSet getAllEmployees() throws  SQLException {
+        Connection connection = JDBCHelper.getConnection();
+        PreparedStatement preparedStatement= connection.prepareStatement("SELECT * FROM EMPLOYEE");
+        ResultSet rs = preparedStatement.executeQuery();
+        return rs;
     }
 
     private Employee getEmployeeFromResult(ResultSet rs) throws SQLException {

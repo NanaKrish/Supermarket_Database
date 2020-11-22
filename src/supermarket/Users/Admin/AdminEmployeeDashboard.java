@@ -15,7 +15,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 import net.proteanit.sql.DbUtils;
+import supermarket.dao.DatabaseService;
+import supermarket.dao.EmployeeDao;
+
 public class AdminEmployeeDashboard extends javax.swing.JFrame {
 
     /**
@@ -28,16 +34,11 @@ public class AdminEmployeeDashboard extends javax.swing.JFrame {
     public void showTable()
     {
          try{
-            Class.forName("java.sql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
-            Statement stmt = con.createStatement();
-            String que = "select * from employee;"; 
-            ResultSet rs = stmt.executeQuery(que);
+             EmployeeDao employeeService = DatabaseService.getEmployeeService();
+
+             ResultSet rs = employeeService.getAllEmployees();
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             rs.close();
-            stmt.close();
-            con.close();
-   
 }
 catch(Exception e)
 {
@@ -324,17 +325,14 @@ showTable();
 
     private void ViewRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewRecordsActionPerformed
   try{
-            Class.forName("java.sql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
-            Statement stmt = con.createStatement();
-            String que = "select * from employee;"; 
-            ResultSet rs = stmt.executeQuery(que);
-            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-            rs.close();
-            stmt.close();
-            con.close();
-   
-}
+      EmployeeDao employeeService = DatabaseService.getEmployeeService();
+
+      ResultSet rs = employeeService.getAllEmployees();
+      jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+      rs.close();
+
+
+  }
 catch(Exception e)
 {
     System.out.println(e);
