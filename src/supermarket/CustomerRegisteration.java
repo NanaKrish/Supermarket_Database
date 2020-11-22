@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package supermarket;
+import supermarket.dao.CustomerDao;
+import supermarket.dao.DatabaseService;
+import supermarket.entity.Customer;
 import supermarket.login.LoginPage;
 import java.sql.*;
 import javax.swing.*;
@@ -108,21 +111,15 @@ String pwd = new String(jpf1.getPassword());
 String phno = jtf3.getText();
 String mailid = jtf4.getText();
  try{
-            Class.forName("java.sql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
-            Statement stmt = con.createStatement();
-            String que = "insert into customer values(null, '"+usrname+"', '"+pwd+"', '"+phno+"','"+mailid+"');"; 
-            stmt.executeUpdate(que);
-            String st = "SELECT LAST_INSERT_ID()";
-            ResultSet rs = stmt.executeQuery(st);
-            int cid = -1;
-            while(rs.next())
-            {
-                cid = rs.getInt(1);
-            }           
-            JOptionPane.showMessageDialog(null, "Registration complete. Your customer ID is " + cid + " Return to the login page!");
-            stmt.close();
-            con.close();
+     CustomerDao customerService = DatabaseService.getCustomerService();
+    Customer c = customerService.addCustomer(usrname, pwd, phno, mailid);
+    if(c != null) {
+        JOptionPane.showMessageDialog(null, "Registration complete. Your customer ID is " + c.getId() + " Return to the login page!");
+
+    } else {
+        JOptionPane.showMessageDialog(null, "Something unexpected happened!");
+
+    }
  }
  catch(Exception e)
  {

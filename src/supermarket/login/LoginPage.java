@@ -10,9 +10,11 @@ import supermarket.CustomerRegisteration;
 import supermarket.Users.Admin.AdminDashboard;
 import supermarket.Users.Customer.CustomerDashboard;
 import supermarket.Users.Employee.EmployeeDashboard;
+import supermarket.dao.CustomerDao;
 import supermarket.dao.DatabaseService;
 import supermarket.dao.EmployeeDao;
 import supermarket.dao.EmployeeDaoImpl;
+import supermarket.entity.Customer;
 import supermarket.entity.Employee;
 
 /**
@@ -181,36 +183,21 @@ if(   "admin".equals(x))
 else if(x.length()==10)
 {
     try{
-            Class.forName("java.sql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
-            Statement stmt = con.createStatement();
-            String que = "select * from customer;";
-            ResultSet rs = stmt.executeQuery(que);
-            while(rs.next())
-            {
-                if(x.equals(rs.getString("mobileno")))
-                {
-                            if(y.equals(rs.getString("password")))
-                            {
-                                JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
-                                 this.setVisible(false);
-                                 new CustomerDashboard(x).setVisible(true);
-                            }
-                            else
-                            {
-                                JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
-                        }
-                }
-            }
-        rs.close();
-        stmt.close();
-        con.close();
+        CustomerDao customerService = DatabaseService.getCustomerService();
+        Customer c = customerService.getCustomer(x, y);
+        if(c==null) {
+            JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
+        } else {
+            JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
+            this.setVisible(false);
+            new CustomerDashboard(x).setVisible(true);
+
+        }
 
     }
             catch(Exception e)
             {
-                System.out.println(e);
-                //JOptionPane.showMessageDialog(null, "Error in connectivity."); 
+                e.printStackTrace();
             }
     
 }
