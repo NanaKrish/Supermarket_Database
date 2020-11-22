@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package supermarket.login;
+
 import javax.swing.JOptionPane;
 import java.sql.*;
+
 import supermarket.CustomerRegisteration;
 import supermarket.Users.Admin.AdminDashboard;
 import supermarket.Users.Customer.CustomerDashboard;
@@ -18,7 +20,6 @@ import supermarket.entity.Customer;
 import supermarket.entity.Employee;
 
 /**
- *
  * @author Narayanan Krishna
  */
 public class LoginPage extends javax.swing.JFrame {
@@ -29,24 +30,20 @@ public class LoginPage extends javax.swing.JFrame {
     public LoginPage() {
         initComponents();
     }
-boolean allnumeric(String s)
- {
-	    if(s==null)
-	    {
-	        return false;
-	    }
-	    else
-	    {
-	        try{
-	            int a = Integer.parseInt(s);
-	            return true;
-	        }
-	        catch(NumberFormatException e)
-	        {
-	            return false;
-	        }
-	    }
- }
+
+    boolean allnumeric(String s) {
+        if (s == null) {
+            return false;
+        } else {
+            try {
+                int a = Integer.parseInt(s);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,78 +155,66 @@ boolean allnumeric(String s)
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       JOptionPane.showMessageDialog(null, "Dear User, please login first!");  
+        JOptionPane.showMessageDialog(null, "Dear User, please login first!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-      String x = usrid.getText();
-      String y = new String(pwdf.getPassword());
-      System.out.println(x.length());
-      System.out.println(allnumeric(x));
-if(   "admin".equals(x))
-{
-    System.out.println("Data read");
-    if("admin".equals(y))
-    {
-        JOptionPane.showMessageDialog(null ,x +", you've logged in successfully.");
-        this.setVisible(false);
-        new AdminDashboard().setVisible(true);
-    }
-    else
-    {
-        JOptionPane.showMessageDialog(null ,x +", login unsuccessful. Try again");
-    }
-}
-else if(x.length()==10)
-{
-    try{
-        CustomerDao customerService = DatabaseService.getCustomerService();
-        Customer c = customerService.getCustomer(x, y);
-        if(c==null) {
-            JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
-        } else {
-            JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
-            this.setVisible(false);
-            new CustomerDashboard(x).setVisible(true);
+        String x = usrid.getText();
+        String y = new String(pwdf.getPassword());
+        System.out.println(x.length());
+        System.out.println(allnumeric(x));
+        if ("admin".equals(x)) {
+            System.out.println("Data read");
+            if ("admin".equals(y)) {
+                JOptionPane.showMessageDialog(null, x + ", you've logged in successfully.");
+                this.setVisible(false);
+                new AdminDashboard().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, x + ", login unsuccessful. Try again");
+            }
+        } else if (x.length() == 10) {
+            try {
+                CustomerDao customerService = DatabaseService.getCustomerService();
+                Customer c = customerService.getCustomer(x, y);
+                if (c == null) {
+                    JOptionPane.showMessageDialog(null, x + ", , Login Failed. Password match - negative. Try Again.");
+                } else {
+                    JOptionPane.showMessageDialog(null, x + ", You've logged in successfully.");
+                    this.setVisible(false);
+                    new CustomerDashboard(x).setVisible(true);
 
-        }
+                }
 
-    }
-            catch(Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-    
-}
 
-else if(x.length()!=10);
-{
-        try{
-            EmployeeDao employeeService = DatabaseService.getEmployeeService();
-            System.out.println("data retrieved");
+        } else if (x.length() != 10) ;
+        {
+            try {
+                EmployeeDao employeeService = DatabaseService.getEmployeeService();
+                System.out.println("data retrieved");
 
-            int z = Integer.parseInt(x);
-            Employee e = employeeService.getEmployee(z, y);
-            if (e == null) {
-                JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
-            } else {
-                JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
-                int i = Integer.parseInt(x);
-                this.setVisible(false);
-                new EmployeeDashboard(i).setVisible(true);
+                int z = Integer.parseInt(x);
+                Employee e = employeeService.getEmployee(z, y);
+                if (e == null) {
+                    JOptionPane.showMessageDialog(null, x + ", , Login Failed. Password match - negative. Try Again.");
+                } else {
+                    JOptionPane.showMessageDialog(null, x + ", You've logged in successfully.");
+                    int i = Integer.parseInt(x);
+                    this.setVisible(false);
+                    new EmployeeDashboard(i).setVisible(true);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
             }
         }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
-}
 
     }//GEN-LAST:event_loginActionPerformed
 
     private void CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerActionPerformed
-this.setVisible(false);
-new CustomerRegisteration().setVisible(true);
+        this.setVisible(false);
+        new CustomerRegisteration().setVisible(true);
     }//GEN-LAST:event_CustomerActionPerformed
 
     /**
@@ -239,7 +224,7 @@ new CustomerRegisteration().setVisible(true);
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
