@@ -10,6 +10,9 @@ import supermarket.CustomerRegisteration;
 import supermarket.Users.Admin.AdminDashboard;
 import supermarket.Users.Customer.CustomerDashboard;
 import supermarket.Users.Employee.EmployeeDashboard;
+import supermarket.dao.DatabaseService;
+import supermarket.dao.EmployeeDao;
+import supermarket.dao.EmployeeDaoImpl;
 
 /**
  *
@@ -197,10 +200,6 @@ else if(x.length()==10)
                                 JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
                         }
                 }
-                /*else
-                {
-                        JOptionPane.showMessageDialog(null ,"Login Failed. Username not found in database! Try Again.");
-                }*/
             }
         rs.close();
         stmt.close();
@@ -217,49 +216,25 @@ else if(x.length()==10)
 
 else if(x.length()!=10);
 {
-    System.out.println("data read");
         try{
-            Class.forName("java.sql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/trdbms", "root", "");
-            Statement stmt = con.createStatement();
-            String que = "select * from employee;";
-            ResultSet rs = stmt.executeQuery(que);
+            EmployeeDao e = DatabaseService.getEmployeeService();
             System.out.println("data retrieved");
+
             int z = Integer.parseInt(x);
-            while(rs.next())
-            {
-                if(z==rs.getInt("eid"))
-                {
-                    System.out.println("data in");
-                            if(y.equals(rs.getString("password")))
-                            {
-                                JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
-                                int i = Integer.parseInt(x);
-                                 this.setVisible(false);
-                                 new EmployeeDashboard(i).setVisible(true);
-                            }
-                            else
-                            {
-                                JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
-                        }
-                }
-                //else
-                //{
-                //        JOptionPane.showMessageDialog(null ,"Login Failed. Username not found in database! Try Again.");
-               //}
+            e.getEmployee(z, y);
+            if (e == null) {
+                JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
+            } else {
+                JOptionPane.showMessageDialog(null ,x +", You've logged in successfully.");
+                int i = Integer.parseInt(x);
+                this.setVisible(false);
+                new EmployeeDashboard(i).setVisible(true);
             }
-                rs.close();
-                stmt.close();
-                con.close();
-   
         }
         catch(Exception e)
         {
             System.out.println(e);
-           // JOptionPane.showMessageDialog(null, "Error in connectivity."); 
         }
-    
-    
 }
 
     }//GEN-LAST:event_loginActionPerformed
