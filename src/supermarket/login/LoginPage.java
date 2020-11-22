@@ -13,6 +13,7 @@ import supermarket.Users.Employee.EmployeeDashboard;
 import supermarket.dao.DatabaseService;
 import supermarket.dao.EmployeeDao;
 import supermarket.dao.EmployeeDaoImpl;
+import supermarket.entity.Employee;
 
 /**
  *
@@ -217,11 +218,11 @@ else if(x.length()==10)
 else if(x.length()!=10);
 {
         try{
-            EmployeeDao e = DatabaseService.getEmployeeService();
+            EmployeeDao employeeService = DatabaseService.getEmployeeService();
             System.out.println("data retrieved");
 
             int z = Integer.parseInt(x);
-            e.getEmployee(z, y);
+            Employee e = employeeService.getEmployee(z, y);
             if (e == null) {
                 JOptionPane.showMessageDialog(null ,x +", , Login Failed. Password match - negative. Try Again.");
             } else {
