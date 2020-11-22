@@ -7,10 +7,13 @@ public class DatabaseService {
     private static CustomerDao customerService;
     private static ProductDao productService;
 
+    private static OrderDao orderService;
+
     static {
         employeeService = new EmployeeDaoImpl();
         customerService = new CustomerDaoImpl();
         productService = new ProductDaoImpl();
+        orderService = new OrderDaoImpl();
     }
 
     public static EmployeeDao getEmployeeService() {
@@ -20,7 +23,11 @@ public class DatabaseService {
     public static CustomerDao getCustomerService() {
         return customerService;
     }
+
     public static ProductDao getProductService() {
         return productService;
+    }
+    public static OrderDao getOrderService() {
+        return orderService;
     }
 }

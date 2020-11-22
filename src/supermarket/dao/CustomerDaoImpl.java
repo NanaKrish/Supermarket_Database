@@ -1,6 +1,7 @@
 package supermarket.dao;
 
 import supermarket.entity.Customer;
+import supermarket.entity.Product;
 import supermarket.helpers.JDBCHelper;
 
 import java.sql.Connection;
@@ -61,6 +62,46 @@ public class CustomerDaoImpl implements CustomerDao {
             return new Customer(cid, name, mobileNo, mailId);
         }
         return  null;
+    }
+
+    @Override
+    public List<Product> productsInCart(Customer c) throws SQLException {
+        return productsInCart(c.getId());
+    }
+
+    @Override
+    public boolean addProductToCart(Customer c, Product p, int quantity) throws SQLException {
+        return addProductToCart(c.getId(), p.getId(), quantity);
+    }
+
+    @Override
+    public boolean addProductToCart(int c, int p, int quantity) throws SQLException {
+        Connection con = JDBCHelper.getConnection();
+        PreparedStatement preparedStatement= con.prepareStatement("insert into CART values (?,?,?)");
+        preparedStatement.setInt(1,p);
+        preparedStatement.setInt(2,c);
+        preparedStatement.setInt(3,quantity);
+        preparedStatement.executeUpdate();
+        return true;
+    }
+
+    @Override
+    public List<Product> productsInCart(int customerId) throws SQLException {
+        Connection connection = JDBCHelper.getConnection();
+        PreparedStatement preparedStatement= connection.prepareStatement("SELECT * FROM CART C JOIN PRODUCTS P ON P.PID = C.PID WHERE CID=?");
+        preparedStatement.setInt(1, customerId);
+        ResultSet rs = preparedStatement.executeQuery();
+        List<Product> products;
+        products = new ArrayList<>();
+        while (rs.next()) {
+            Product p= new Product();
+            p.setId(rs.getInt("PID"));
+            p.setPrice(rs.getInt("PRICE"));
+            p.setProductName(rs.getString("PNAME"));
+            p.setQuantity(rs.getInt("QUANTITY"));
+            products.add(p);
+        }
+        return products;
     }
 
     @Override
